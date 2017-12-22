@@ -1,29 +1,31 @@
 body {
-	background-color: #294454;
-	color: #fff;
+	background-color: #F0FFFF;
+	color: #696969;
+	font-size: 50px;
 	background-image: url(../images/yellow-circles.svg);
-	background-size: 800px 800px;
+	background-size: 1000px 1000px;
 	background-position: left -440px top -240px;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 }
 
 h1 {
-	color: #F3CB02;
+	color: #5F9EA0;
 }
 
 #eventname {
-        color: #F3CB02;
-        font-size: 32px;
+        color: #5F9EA0;
+        font-size: 100px;
 }
 
 #sessionname {
-        color: #F3CB02;
-        font-size: 64px;
+        color: #5F9EA0;
+        font-size: 50px;
 }
 
 #luckyperson {
 	font-size: 128px;
+	color: #696969;
 }
 
 

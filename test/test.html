@@ -1,0 +1,1067 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Random Name Picker on Flippity.net</title>
+<LINK href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+
+
+<LINK rel=stylesheet href="rnp-Style.css">
+<LINK rel="icon" type="image/png" href="favicon.png">
+
+<SCRIPT>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-23823535-6', 'flippity.net');
+  ga('send', 'pageview');
+</SCRIPT>
+
+
+
+</head>
+
+<BODY bgcolor="#999999" text="#000000" onkeydown="keyCode(event)">
+
+<TABLE width="100%" height="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+  <TR>
+    <TD height="1" bgcolor="#eeeeee">
+    <DIV STYLE="width: 728px; margin: 0px auto;">  
+		<DIV Class="logo"><A href="https://www.flippity.net/"><IMG src="images/Flippity-Logo-Gray.png" alt="Flippity.net" width="100" height="43" border="0" align="left"></A></DIV>
+		<H1 id="title">Random Name Picker</H1>
+     </DIV>
+      </TD>
+  </TR>
+  <TR class="noPrint">
+    <TD height="1">
+    
+    <TABLE cellspacing="0" cellpadding="0" height="35" background="images/SubNavSmallBG.png" STYLE="width: 962px; margin: 30px auto;">
+        <TR valign="middle">
+        <TD valign="middle">&nbsp;</TD>
+        <TD width="55" align="center"  valign="middle" background="images/SubNavSmall-on.png" class="subnav" id="tS" onClick="switchTab('S')"><P class="subnav">Spinner</P></TD>
+        <TD width="7" valign="middle">&nbsp;</TD>
+        <TD width="55" align="center"  valign="middle" background="images/SubNavSmall.png" class="subnav" id="tN" onClick="switchTab('N')"><P class="subnav">Single<br>Name</P></TD>
+        <TD width="7" valign="middle">&nbsp;</TD>
+        <TD width="55" align="center" valign="middle" background="images/SubNavSmall.png" class="subnav" id="tL" onClick="switchTab('L')"><P class="subnav">Lineup</P></TD>
+        <TD width="7" valign="middle">&nbsp;</TD>
+        <TD width="55" align="center" valign="middle" background="images/SubNavSmall.png" class="subnav" id="tG2" onClick="switchTab('G2')"><P class="subnav">Groups<br>
+          of 2</P></TD>
+        <TD width="7" valign="middle">&nbsp;</TD>
+        <TD width="55" align="center" valign="middle" background="images/SubNavSmall.png" class="subnav" id="tG3" onClick="switchTab('G3')"><P class="subnav">Groups<br>
+          of 3</P></TD>
+        <TD width="7" valign="middle">&nbsp;</TD>
+        <TD width="55" align="center" valign="middle" background="images/SubNavSmall.png" class="subnav" id="tG4" onClick="switchTab('G4')"><P class="subnav">Groups<br>
+          of 4</P></TD>
+        <TD width="7" valign="middle">&nbsp;</TD>
+        <TD width="55" align="center" valign="middle" background="images/SubNavSmall.png" class="subnav" id="tG5" onClick="switchTab('G5')"><P class="subnav">Groups<br>
+          of 5</P></TD>
+        <TD width="7" valign="middle">&nbsp;</TD>
+        <TD width="55" align="center" valign="middle" background="images/SubNavSmall.png" class="subnav" id="tT2" onClick="switchTab('T2')"><P class="subnav">2<br>
+          Teams
+        </P></TD>
+        <TD width="7" valign="middle">&nbsp;</TD>
+        <TD width="55" align="center" valign="middle" background="images/SubNavSmall.png" class="subnav" id="tT3" onClick="switchTab('T3')"><P class="subnav">3<br>
+    Teams</P></TD>
+        <TD width="7" valign="middle">&nbsp;</TD>
+        <TD width="55" align="center" valign="middle" background="images/SubNavSmall.png" class="subnav" id="tT4" onClick="switchTab('T4')"><P class="subnav">4<br>
+          Teams</P></TD>
+        <TD width="7" valign="middle">&nbsp;</TD>
+        <TD width="55" align="center" valign="middle" background="images/SubNavSmall.png" class="subnav" id="tT5" onClick="switchTab('T5')"><P class="subnav">5<br>
+          Teams</P></TD>
+        <TD width="7" valign="middle">&nbsp;</TD>
+        <TD width="55" align="center" valign="middle" background="images/SubNavSmall.png" class="subnav" id="tSC" onClick="switchTab('SC')"><P class="subnav">Seating<br>
+          Chart</P></TD>
+        <TD width="7" valign="middle">&nbsp;</TD>
+        <TD width="55" align="center" valign="middle" background="images/SubNavSmall.png" class="subnav" id="tM" onClick="switchTab('M')"><P class="subnav">More…
+        </P></TD>
+        <TD width="81" valign="middle"><img src="images/Button-Timer-Blue.png" width="20" height="20" ID="timerButton" title="Click to show timer" onClick="showHideTimer()" STYLE="cursor: pointer; margin-left: 20px;"></TD>
+      </TR>
+	</TABLE>
+
+	</TD>
+  </TR>
+  <TR class="noPrint">
+    <TD height="1">
+		<DIV ID="timer">
+        <img src="images/Button-Play-Blue-Small.png" width="20" height="20" ID="start" title="Click to start timer" onClick="startTimer()">
+        <img src="images/Button-Play-Blue-Small.png" width="20" height="20" ID="restart" title="Click to restart timer" onClick="restartTimer()" STYLE="display: none;">
+        <img src="images/Button-Stop-Blue-Small.png" width="20" height="20" ID="stop" title="Click to stop timer" onClick="stopTimer()" STYLE="display: none;">
+        <SPAN ID="time" contenteditable="true">0:00</SPAN>
+        <img src="images/Button-Reload-Blue-Small.png" width="20" height="20" title="Click to reset timer" onClick="resetTimer()">
+        </DIV>
+    </TD>
+  </TR>
+  <TR valign="middle">
+    <TD>
+
+<SCRIPT type="text/javascript">
+
+	names = new Array()
+	longName = 0
+	groupNum = 2	
+
+	loadError = true
+	
+	function loadContent(json) {
+
+		sheetTitle = json.feed.title.$t
+		if (sheetTitle == "Demo" || sheetTitle == "Names") {
+			docTitle = "Random Name Picker on Flippity.net"
+			pageTitle = "Random Name Picker"
+			}
+		else {
+			docTitle = sheetTitle + " Random Name Picker on Flippity.net"
+			pageTitle = sheetTitle + " Random Name Picker"
+			}
+		
+		for (i=0;i<json.feed.entry.length;i++) {			
+			names[i] = json.feed.entry[i].gsx$name.$t
+			if (names[i].length > longName) { longName = names[i].length}
+			}
+		shuffle()
+
+		loadError = false
+
+		}
+
+	function shuffle() {
+	  var i = names.length
+	  if ( i == 0 ) return false
+	  while ( --i ) {
+			var j = Math.floor( Math.random() * ( i + 1 ) )
+			var tempNamei = names[i]
+			var tempNamej = names[j]
+			names[i] = tempNamej
+			names[j] = tempNamei
+			}
+		}
+
+	tempNames = new Array()
+
+	function cycleNext() {
+		tempName = names[0]
+		tempNum = document.getElementById('ln0').innerHTML
+		for (i = 0; i < names.length - 1; i++) {
+			names[i] = names[i + 1]
+			}
+		names[names.length-1] = tempName
+		document.getElementById('n').innerHTML = names[0]
+		for (i = 0; i < names.length; i++) {
+			document.getElementById('l' + i).innerHTML = names[i]
+			}
+		for (i = 0; i < names.length - 1; i++) {
+			document.getElementById('ln' + i).innerHTML = document.getElementById('ln' + (i+1)).innerHTML
+			}
+		document.getElementById('ln' + (names.length-1)).innerHTML = tempNum		
+		}
+
+	function cyclePrev() {
+		tempName = names[names.length-1]
+		tempNum = document.getElementById('ln' + (names.length-1)).innerHTML
+		for (i = names.length-1; i > 0; i--) {
+			names[i] = names[i - 1]
+			}
+		names[0] = tempName
+		document.getElementById('n').innerHTML = names[0]
+		for (i = 0; i < names.length; i++) {
+			document.getElementById('l' + i).innerHTML = names[i]
+			}
+		for (i = (names.length-1); i > 0; i--) {
+			document.getElementById('ln' + i).innerHTML = document.getElementById('ln' + (i-1)).innerHTML
+			}
+		document.getElementById('ln0').innerHTML = tempNum
+		}
+		
+	function writeName() {
+		document.write("<DIV class='groupNames' id='" + groupNum + "-" + i + "' STYLE='width: " + longName * 15 + "px; cursor: pointer;' onClick='swapOut(" + groupNum + "," + i + ")' TITLE='Click to Swap'>" + names[i] + "</DIV>")
+		}
+
+	function writeBlank() {
+		document.write("<DIV class='groupNames' id='" + groupNum + "x-" + j + "' STYLE='width: " + longName * 15 + "px;'>&nbsp;</DIV>")
+		}
+
+	randomNum = Math.floor((Math.random() * 360) + 1)
+
+	function groupBy(num) {
+		i = 0
+		j = 0
+		k = 1
+		numGroups = Math.ceil(names.length / num)
+		while (i < names.length) {
+			color = 360 / numGroups * i / num + randomNum
+			if (color > 360) { color = color - 360 }			
+			document.write("<DIV class='group' STYLE='background-color: hsl(" + color + ", 80%, 50%); border: 3px solid hsl(" + color + ", 80%, 33%);'>")
+			document.write("<DIV contentEditable='true' onfocusin='lockShortcuts()' onfocusout='unlockShortcuts()' class='groupNum' STYLE='color: hsl(" + color + ", 80%, 33%);'>" + k + "</DIV>")
+			k++
+			for (g = 1; g <= num; g++) {
+				if (i < names.length) {
+					writeName()
+					i++
+					}
+				else {
+					writeBlank()
+					j++
+					}
+				}
+			document.write("</DIV>")
+			}
+		}
+
+	function teamBy(num) {
+		iStart = 0
+		j = 0
+		k = 1
+		if (names.length > num) {
+			teamSize = Math.floor(names.length / num)
+			extras = names.length % num
+			}
+		else {
+			teamSize = 1
+			extras = 0
+			}	
+
+		if (extras != 0) { remainder = 1 }
+		else { remainder = 0 }
+
+		for (g = 1; g <= num; g++) {
+			color = 360 / num * (g - 1) + randomNum
+			if (color > 360) { color = color - 360 }
+			document.write("<DIV class='group' STYLE='background-color: hsl(" + color + ", 80%, 50%); border: 3px solid hsl(" + color + ", 80%, 33%);'>")
+			document.write("<DIV contentEditable='true' onfocusin='lockShortcuts()' onfocusout='unlockShortcuts()' class='groupNum' STYLE='color: hsl(" + color + ", 80%, 33%);'>" + k + "</DIV>")
+			k++
+			for (i = iStart; i < (iStart + teamSize * num); i = i + num) {
+				if (i < names.length) {
+					writeName()
+					}
+				else {
+					writeBlank()
+					j++
+					}
+				}
+			if (extras > 0) {
+				writeName()
+				i++
+				extras--
+				}
+			else if (remainder == 1) {
+				writeBlank()
+				j++
+				}
+			iStart++
+			document.write("</DIV>")
+			}
+		}
+
+	function createChart() {
+		i = 0
+		maxRows = 20
+		maxCols = 20
+		cols = 5
+		rows = Math.ceil(names.length / cols)
+		document.write("<TABLE  border='0' cellspacing='0' cellpadding='0'>")
+		for (r = 1; r <= maxRows; r++) {
+			document.write("<TR>")
+			for (c = 1; c <= maxCols; c++) {
+				document.write("<TD><DIV class='seat' id='s" + i + "' STYLE='width: " + longName * 15 + "px; display: none;' onClick='switchSeats(" + i + ")' TITLE='Click to Switch Seats'>&nbsp;</DIV></TD>")		
+				i++
+				}
+			document.write("</TR>")
+			}
+		document.write("</TABLE>")
+		displayChart()
+		fillChart()
+		}
+	
+	function displayChart() {
+		i = 0
+		for (r = 1; r <= maxRows; r++) {
+			for (c = 1; c <= maxCols; c++) {
+				if (c <= cols && r <= rows) {
+					document.getElementById('s'+ i).style.display = "block"
+					}
+				else {
+					document.getElementById('s'+ i).style.display = "none"
+					}
+				i++
+				}
+			}
+		}
+
+	function fillChart() {
+		i = 0
+		for (r = 0; r < rows; r++) {
+			for (c = 0; c < cols; c++) {
+				if (i < names.length) {
+					document.getElementById('s' + (r*maxCols + c)).innerHTML = names[i]
+					i++
+					}
+				else {
+					document.getElementById('s' + (r*maxCols + c)).innerHTML = "&nbsp;"
+					}
+				}
+			}
+		}
+
+	function addCol() {
+		cols++
+		displayChart()
+		fillChart()
+		}
+
+	function delCol() {
+		cols--
+		displayChart()
+		fillChart()
+		}
+
+	function addRow() {
+		rows++
+		displayChart()
+		fillChart()
+		}
+		
+	function delRow() {
+		rows--
+		displayChart()
+		fillChart()
+		}
+
+	tabs = new Array("tS","tN","tL","tG2","tG3","tG4","tG5","tT2","tT3","tT4","tT5","tSC","tM")
+	screens = new Array("S","N","L","G2","G3","G4","G5","G6","G7","G8","G9","G10","G11","G12","T2","T3","T4","T5","T6","T7","T8","T9","T10","T11","T12","SC","M")
+	
+	curScreen = "S"
+	
+	function switchTab(grp) {
+		for (i = 0; i < tabs.length; i++) { 	
+			document.getElementById(tabs[i]).style.backgroundImage='url(images/SubNavSmall.png)'
+			}
+		document.getElementById("t" + grp).style.backgroundImage='url(images/SubNavSmall-on.png)'
+		showGroup(grp)
+		}
+		
+	function showGroup(grp) {
+		curScreen = grp
+		document.getElementById('S').style.display = "none"
+		document.getElementById('shuffle').style.display = "block"
+
+		for (i = 0; i < screens.length; i++) { 	
+		 	document.getElementById(screens[i]).style.display = "none"
+		 	}
+			
+		document.getElementById(grp).style.display = "block"
+		
+		if (grp == "M" || grp =="S") {
+			document.getElementById('shuffle').style.display = "none"
+			}
+		}
+        
+	function reShuffle() {
+		shuffle()
+		
+		document.getElementById('n').innerHTML = names[0]
+		
+		for (i = 0; i < names.length; i++) {	
+			document.getElementById('l' + i).innerHTML = names[i]
+			}
+		
+		for (i = 0; i < names.length; i++) {	
+			for (g = 2; g < groupNum; g++) {
+				document.getElementById(g + '-' + i).innerHTML = names[i]
+				}
+			}
+			
+		for (i = 0; i < names.length; i++) {
+			document.getElementById('ln' + i).innerHTML = (i+1)
+			}
+			
+		fillChart()
+		
+		}
+	
+	swapSwitch = 0
+	
+	function swapOut(grp,num) {
+		if (swapSwitch == 0) {
+			document.getElementById(grp + '-' + num).style.backgroundColor = "rgba(254,254,254,0.3)"
+			swapGrp1 = grp
+			swapNum1 = num
+			swapName1 = document.getElementById(grp + '-' + num).innerHTML
+			swapSwitch = 1
+			}
+		else if (swapSwitch == 1) {
+			document.getElementById(grp + '-' + num).style.backgroundColor = "rgba(254,254,254,0.3)"
+			swapGrp2 = grp
+			swapNum2 = num
+			swapName2 = document.getElementById(grp + '-' + num).innerHTML			
+			document.getElementById(swapGrp1 + '-' + swapNum1).innerHTML = swapName2
+			document.getElementById(grp + '-' + num).innerHTML = swapName1
+			swapSwitch = -1
+			setTimeout(unHighlightName,1000)
+			}
+		}
+
+	function unHighlightName() {
+		document.getElementById(swapGrp1 + '-' + swapNum1).style.backgroundColor = "transparent"
+		document.getElementById(swapGrp2 + '-' + swapNum2).style.backgroundColor = "transparent"
+		swapSwitch = 0
+		}
+		
+	function switchSeats(seatPos) {
+		if (swapSwitch == 0) {
+			document.getElementById("s" + seatPos).style.backgroundColor = "hsl(200, 100%, 75%)"
+			seatPos1 = seatPos
+			seatName1 = document.getElementById("s" + seatPos).innerHTML
+			swapSwitch = 1
+			}
+		else if (swapSwitch == 1) {
+			document.getElementById("s" + seatPos).style.backgroundColor = "hsl(200, 100%, 75%)"
+			seatPos2 = seatPos
+			seatName2 = document.getElementById("s" + seatPos).innerHTML
+			document.getElementById("s" + seatPos1).innerHTML = seatName2
+			document.getElementById("s" + seatPos2).innerHTML = seatName1
+			swapSwitch = -1
+			setTimeout(unHighlightSeat,1000)
+			}
+		}
+
+	function unHighlightSeat() {
+		document.getElementById("s" + seatPos1).style.backgroundColor = "hsl(200, 100%, 50%)"
+		document.getElementById("s" + seatPos2).style.backgroundColor = "hsl(200, 100%, 50%)"
+		swapSwitch = 0
+		}
+
+	function lockShortcuts() {
+		shortcuts = false
+		}
+
+	function unlockShortcuts() {
+		shortcuts = true
+		}
+
+	unlockShortcuts()
+
+	function keyCode(event) {
+		if (!event.ctrlKey) {
+			if (shortcuts) {
+				var x = event.keyCode
+				if (x == 37 || x == 38 || x == 80) { // Left Arrow,  Up Arrow, P
+					cyclePrev()
+					}
+				else if (x == 39 || x == 40 || x == 78) { // Right Arrow,  Down Arrow, N
+					cycleNext()
+					}
+				else if (x == 82) { // R
+					reShuffle()
+					}
+				else if (x == 83 && curScreen == "S") { // S
+					resetWheel(), spinWheel()
+					}
+				}
+			}
+		}
+
+	//Timer Functions
+
+	showTimer = false
+	stopwatch = true
+	runTimer = false
+	beep = new Audio("Beep.mp3")
+	tValue = "0:00"
+
+	function showHideTimer() {
+		if (showTimer) {
+			stopBeep()
+			document.getElementById("timer").style.display = "none"
+			document.getElementById("timerButton").title = "Click to show timer"
+			}
+		else {
+			document.getElementById("timer").style.display = "block"
+			document.getElementById("timerButton").title = "Click to hide timer"
+			}
+		showTimer = !showTimer
+		}
+
+	function getTime() {
+		var timeError = true
+		tValue = document.getElementById("time").innerHTML
+		if (tValue.indexOf(":") == 1) {
+			tValueArr = tValue.split(':');
+			m = parseInt(tValueArr[0])
+			s = parseInt(tValueArr[1])
+			if (Number.isInteger(m) && Number.isInteger(s)) {
+				t = (m * 60) + s
+				timeError = false
+				}
+			}
+		if (timeError) {
+			alert("Please use this format: 0:00")
+			document.getElementById("time").focus()
+			tValue = "0:00"
+			return false
+			}
+		}
+
+	function startTimer() {
+		getTime()
+		if (t > 0) {
+			stopwatch = false
+			}
+		else {
+			stopwatch = true
+			}
+		restartTimer()
+		document.getElementById("start").style.display = "none"
+		document.getElementById("stop").style.display = "inline"
+		}
+
+	function restartTimer() {
+		if (stopwatch) {
+			startForward()
+			}
+		else {
+			startBackward()
+			}
+		document.getElementById("restart").style.display = "none"
+		document.getElementById("stop").style.display = "inline"
+		}
+
+	function startForward() {
+		runTimer = setInterval(runForward,1000)
+		}
+
+	function startBackward() {
+		runTimer = setInterval(runBackward,1000)
+		}
+
+	function runForward() {
+		if (m == 59 && s == 59) {
+			stopTimer()
+			}
+		else {
+			t++
+			updateTimer()
+			}
+		}
+			
+	function runBackward() {
+		if (m == 0 && s == 0) {
+			stopTimer()
+			beep.play()
+			stopwatch = true
+			}
+		else {
+			t--
+			updateTimer()
+			}
+		}
+					
+	function updateTimer() {
+		m = Math.floor(t / 60)
+		s = t - (m * 60)
+		if (s < 10) {s = "0" + s}
+		displayTime = m + ":" + s
+		document.getElementById("time").innerHTML = displayTime
+		}
+
+	function stopBeep() {
+		clearInterval(runTimer)
+		runTimer = false
+		beep.pause()
+		beep.currentTime = 0
+		}
+		
+	function stopTimer() {
+		stopBeep()
+		document.getElementById("stop").style.display = "none"
+		document.getElementById("restart").style.display = "inline"
+		}
+		
+	function resetTimer() {
+		stopTimer()
+		document.getElementById("time").innerHTML = tValue
+		document.getElementById("restart").style.display = "none"
+		document.getElementById("start").style.display = "inline"
+		}
+
+</SCRIPT>
+
+<SCRIPT type="text/javascript" src="https://spreadsheets.google.com/feeds/list/1M4gp3M1WVBruO5-WIJzSaATzFwY9lp09PPW9afbDmUs/1/public/values?alt=json-in-script&callback=loadContent"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+	if (loadError) {
+		window.location.replace("https://www.flippity.net/error.asp?k=1M4gp3M1WVBruO5-WIJzSaATzFwY9lp09PPW9afbDmUs")
+		}
+</SCRIPT>
+
+<SCRIPT type="text/javascript">
+document.title = "Flippity.net: " + sheetTitle  
+document.getElementById('title').innerHTML = sheetTitle
+</SCRIPT>
+
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="middle">
+<td align="center">
+
+<DIV id="S">
+        <script type="text/javascript" src="rnp.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+		<DIV ID="spinnerName">&nbsp;</DIV>
+        <table cellpadding="0" cellspacing="0" border="0" STYLE="margin: 0px 0px 40px 0px;">
+            <tr>
+                <td class="wheel" align="center" valign="top">
+                    <canvas id="canvas" width="448" height="480" STYLE="margin-top: 29px; cursor: pointer;" onClick="resetWheel(), spinWheel()" TITLE="Click to spin [S]">
+                        <p align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+                    </canvas>
+                </td>
+            </tr>
+        </table>
+
+        <script>
+ 			segments = {}
+ 			for (i=0; i<names.length; i++) {
+				colorCode = "hsl(" + 360 / names.length * i + ", 80%, 50%)"
+				segments[i] = {'fillStyle' : colorCode,'text' : names[i].substring(0,12)}
+				}
+			var fontSize = -.29 * names.length + 35
+            var theWheel = new Winwheel({
+				'numSegments'  : names.length,  // Specify number of segments.
+                'outerRadius'  : 213,   		// Set outer radius so wheel fits inside the background.
+                'textFontSize' : fontSize,		// Set font size as desired.
+				'segments'     : segments,      // Define segments including colour and text.
+				'animation'    :				// Specify the animation to use.
+                {
+                    'type'     : 'spinToStop',
+                    'duration' : 5,    			// Duration in seconds.
+                    'spins'    : 6,				// Number of complete spins.
+					'direction': 'clockwise',
+                    'callbackFinished' : 'alertPrize()'
+					
+                }
+            });
+            var wheelPower    = 0;
+            var wheelSpinning = false;
+            
+            function spinWheel()
+            {
+                if (wheelSpinning == false)
+                {
+                    theWheel.animation.spins = 6;
+                    theWheel.startAnimation();
+                    wheelSpinning = true;
+                }
+            }
+            
+            function resetWheel()
+            {
+				document.getElementById("spinnerName").innerHTML = "&nbsp;"
+                theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
+                theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
+                theWheel.draw();                // Call draw to render changes to the wheel.
+            }
+            
+            function alertPrize()
+            {
+				wheelSpinning = false;
+				document.getElementById("spinnerName").innerHTML = theWheel.getIndicatedSegment().text
+            }
+        </script>
+
+	<SCRIPT type="text/javascript">
+		function showHide(blk) {
+			if (document.getElementById(blk).style.display == 'none') {
+                document.getElementById(blk).style.display = 'inline'
+                }
+            else {
+                document.getElementById(blk).style.display = 'none'
+                }
+            }
+    </SCRIPT>
+
+    <DIV class="legalBox">
+    <P STYLE="text-align: center;"><A class="legal" href="javascript:showHide('legal')" title="Show/Hide More Information">Spinner wheel code copyright&copy; 2017 Douglas McKechie</A></P>
+    <SPAN ID="legal" STYLE="display: none;"><P>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</P>
+    <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+    <p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p></SPAN>
+    </DIV>
+
+</DIV>
+
+<DIV id="N" STYLE="display: none;">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="noPrint" align="center"><A HREF="javascript:cyclePrev()"><img src="images/Button-Up.png" width="45" height="23" TITLE="Previous [P]"></A></td>
+  </tr>
+  <tr>
+    <td>
+	<SCRIPT type="text/javascript">
+	document.write("<DIV class='singleName' id='n'>" + names[0] + "</DIV>")
+    </SCRIPT>    
+    </td>
+  </tr>
+  <tr>
+    <td class="noPrint" align="center"><A HREF="javascript:cycleNext()"><img src="images/Button-Down.png" width="45" height="23" TITLE="Next [N]" STYLE="margin-bottom: 20px;"></A></td>
+  </tr>
+</table>
+</DIV>
+
+<DIV id="L" STYLE="display: none;">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="noPrint" align="center"><A HREF="javascript:cyclePrev()"><img src="images/Button-Up.png" width="45" height="23" TITLE="Previous [P]" STYLE="margin-top: 20px;"></A></td>
+  </tr>
+  <tr>
+    <td align="center">
+	<SCRIPT type="text/javascript">
+		color = Math.floor(Math.random() * 360)
+		style = "background-color: hsl(" + color + ", 80%, 50%); border: 3px solid hsl(" + color + ", 80%, 33%);'"
+		document.write("<DIV class='lineup1' STYLE='" + style + "'><DIV class='nameNum' STYLE='color: hsl(" + color + ", 80%, 33%);'><SPAN id='ln0'>" + (1) + "</SPAN></DIV><SPAN id='l0'>" + names[0] + "</SPAN></DIV>")
+    </SCRIPT>
+    </td>
+  </tr>
+  <tr>
+    <td class="noPrint" align="center"><A HREF="javascript:cycleNext()"><img src="images/Button-Down.png" width="45" height="23" TITLE="Next [N]" STYLE="margin-bottom: 20px;"></A></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center">
+	<SCRIPT type="text/javascript">
+		style = "background-color: hsl(" + color + ", 80%, 66%); border: 3px solid hsl(" + color + ", 80%, 44%);'"
+		for (i=1; i < names.length; i++) {			
+			document.write("<DIV class='lineup' STYLE='" + style + "'><DIV class='nameNum' STYLE='color: hsl(" + color + ", 80%, 40%);'><SPAN id='ln" + i + "'>" + (i+1) + "</SPAN></DIV><SPAN id='l" + i + "'>" + names[i] + "</SPAN></DIV>")
+			}
+    </SCRIPT>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+</table>
+</DIV>
+
+<DIV id="G2" STYLE="display: none;">
+<!--<H2>Groups of 2</H2> -->
+	<SCRIPT type="text/javascript">
+		groupBy(2)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="G3" STYLE="display: none;">
+<!--<H2>Groups of 3</H2> -->
+	<SCRIPT type="text/javascript">
+		groupBy(3)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="G4" STYLE="display: none;">
+<!--<H2>Groups of 4</H2> -->
+	<SCRIPT type="text/javascript">
+		groupBy(4)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="G5" STYLE="display: none;">
+<!--<H2>Groups of 5</H2> -->
+	<SCRIPT type="text/javascript">
+		groupBy(5)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="G6" STYLE="display: none;">
+<!--<H2>Groups of 6</H2> -->
+	<SCRIPT type="text/javascript">
+		groupBy(6)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="G7" STYLE="display: none;">
+<!--<H2>Groups of 7</H2> -->
+	<SCRIPT type="text/javascript">
+		groupBy(7)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="G8" STYLE="display: none;">
+<!--<H2>Groups of 8</H2> -->
+	<SCRIPT type="text/javascript">
+		groupBy(8)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="G9" STYLE="display: none;">
+<!--<H2>Groups of 9</H2> -->
+	<SCRIPT type="text/javascript">
+		groupBy(9)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="G10" STYLE="display: none;">
+<!--<H2>Groups of 10</H2> -->
+	<SCRIPT type="text/javascript">
+		groupBy(10)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="G11" STYLE="display: none;">
+<!--<H2>Groups of 11</H2> -->
+	<SCRIPT type="text/javascript">
+		groupBy(11)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="G12" STYLE="display: none;">
+<!--<H2>Groups of 12</H2> -->
+	<SCRIPT type="text/javascript">
+		groupBy(12)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="T2" STYLE="display: none;">
+<!--<H2>2 Teams</H2> -->
+	<SCRIPT type="text/javascript">
+		teamBy(2)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="T3" STYLE="display: none;">
+<!--<H2>3 Teams</H2> -->
+	<SCRIPT type="text/javascript">
+		teamBy(3)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="T4" STYLE="display: none;">
+<!--<H2>4 Teams</H2> -->
+	<SCRIPT type="text/javascript">
+		teamBy(4)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="T5" STYLE="display: none;">
+<!--<H2>5 Teams</H2> -->
+	<SCRIPT type="text/javascript">
+		teamBy(5)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="T6" STYLE="display: none;">
+<!--<H2>6 Teams</H2> -->
+	<SCRIPT type="text/javascript">
+		teamBy(6)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="T7" STYLE="display: none;">
+<!--<H2>7 Teams</H2> -->
+	<SCRIPT type="text/javascript">
+		teamBy(7)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="T8" STYLE="display: none;">
+<!--<H2>8 Teams</H2> -->
+	<SCRIPT type="text/javascript">
+		teamBy(8)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="T9" STYLE="display: none;">
+<!--<H2>9 Teams</H2> -->
+	<SCRIPT type="text/javascript">
+		teamBy(9)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="T10" STYLE="display: none;">
+<!--<H2>10 Teams</H2> -->
+	<SCRIPT type="text/javascript">
+		teamBy(10)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="T11" STYLE="display: none;">
+<!--<H2>11 Teams</H2> -->
+	<SCRIPT type="text/javascript">
+		teamBy(11)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="T12" STYLE="display: none;">
+<!--<H2>12 Teams</H2> -->
+	<SCRIPT type="text/javascript">
+		teamBy(12)
+		groupNum++
+    </SCRIPT>
+</DIV>
+
+<DIV id="SC" STYLE="display: none;">
+<!--<H2>Seating Chart</H2> -->
+	<table border="0" cellspacing="0" cellpadding="10">
+	  <tr>
+	    <td>
+			<SCRIPT type="text/javascript">
+            createChart()
+            </SCRIPT>
+        </td>
+	    <td valign="middle" class="noPrint"><A HREF="javascript:delCol()"><img src="images/Button-DelColumn.png" width="23" height="45" TITLE="Click to Delete Column"></A><A HREF="javascript:addCol()"><img src="images/Button-AddColumn.png" width="23" height="45" hspace="4" TITLE="Click to Add Column"></A>
+        </td>
+	    </tr>
+	  </table>
+<SPAN class="noPrint">
+<A HREF="javascript:delRow()"><img src="images/Button-DelRow.png" width="45" height="23" TITLE="Click to Delete Row"></A><br>
+<A HREF="javascript:addRow()"><img src="images/Button-AddRow.png" width="45" height="23" vspace="4" TITLE="Click to Add Row"></A>
+</SPAN>
+</DIV>
+
+<SPAN class="noPrint">
+<DIV id="shuffle" STYLE="margin: 30px; display: none;">
+<A HREF="javascript:reShuffle()"><img src="images/Button-ReShuffle.png" width="50" height="25" TITLE="Re-Shuffle [R]"></A>
+</DIV>
+</SPAN>
+
+<DIV id="M" STYLE="display: none;">
+	<TABLE><TR valign="top">
+    <TD align="center">
+    <P class="moreNav" onClick="switchTab('S')">Spinner</P>
+    <P class="moreNav" onClick="switchTab('N')">Single Name</P>
+    <P class="moreNav" onClick="switchTab('L')">Lineup</P>
+    </TD>
+    <TD width="50"></TD>
+    <TD align="center">
+    <P class="moreNav" onClick="switchTab('G2')">Groups of 2</P>
+    <P class="moreNav" onClick="switchTab('G3')">Groups of 3</P>
+    <P class="moreNav" onClick="switchTab('G4')">Groups of 4</P>
+    <P class="moreNav" onClick="switchTab('G5')">Groups of 5</P>
+    <P class="moreNav" onClick="showGroup('G6')">Groups of 6</P>
+	<P class="moreNav" onClick="showGroup('G7')">Groups of 7</P>
+	<P class="moreNav" onClick="showGroup('G8')">Groups of 8</P>
+	<P class="moreNav" onClick="showGroup('G9')">Groups of 9</P>
+	<P class="moreNav" onClick="showGroup('G10')">Groups of 10</P>
+	<P class="moreNav" onClick="showGroup('G11')">Groups of 11</P>
+	<P class="moreNav" onClick="showGroup('G12')">Groups of 12</P>
+    </TD>
+    <TD width="50"></TD>
+    <TD align="center">
+	<P class="moreNav" onClick="switchTab('T2')">2 Teams</P>
+	<P class="moreNav" onClick="switchTab('T3')">3 Teams</P>
+	<P class="moreNav" onClick="switchTab('T4')">4 Teams</P>
+	<P class="moreNav" onClick="switchTab('T5')">5 Teams</P>
+	<P class="moreNav" onClick="showGroup('T6')">6 Teams</P>
+	<P class="moreNav" onClick="showGroup('T7')">7 Teams</P>
+	<P class="moreNav" onClick="showGroup('T8')">8 Teams</P>
+	<P class="moreNav" onClick="showGroup('T9')">9 Teams</P>
+	<P class="moreNav" onClick="showGroup('T10')">10 Teams</P>
+	<P class="moreNav" onClick="showGroup('T11')">11 Teams</P>
+	<P class="moreNav" onClick="showGroup('T12')">12 Teams</P>
+    </TD>
+    <TD width="50"></TD>
+    <TD align="center">
+	<P class="moreNav" onClick="switchTab('SC')">Seating Chart</P>
+    </TD>
+    </TR></TABLE>
+<BR><P class="moreNav" onClick="window.open('https://www.flippity.net/tb.asp?k=1M4gp3M1WVBruO5-WIJzSaATzFwY9lp09PPW9afbDmUs&r=r')">Send to Tournament Bracket<img src="images/Button-Launch-Blue.png" alt="" width="16" height="16" hspace="6" border="0" align="absmiddle"></P>
+</DIV>
+    
+    </TD>
+  </TR>
+</TABLE>
+
+    </TD>
+  </TR>
+  <TR class="noPrint">
+    <TD height="1" align="CENTER" valign="MIDDLE">
+	<SCRIPT type="text/javascript">
+		function showHideShare() {
+            if (document.getElementById('share').style.display == 'none') {
+                document.getElementById('share').style.display = 'inline'
+                }
+            else {
+                document.getElementById('share').style.display = 'none'
+                }
+            }
+        </SCRIPT>
+      <BR>
+      <P class="share"><A class="share" href="javascript:showHideShare()" title="Show/Hide Sharing Options"><IMG SRC="images/Share-Icon-Gray.png" width="15" height="16" border="0" align="absmiddle" style="margin-right: 6px;">share</A></P>
+      
+      <DIV ID="share" style="display: none;">
+      
+      <IMG src="images/Link-Icon.png" width="16" height="16" hspace="10" align="absmiddle">
+        <INPUT id="linkURL" type="text" class="linkBox" onClick="this.select()" value="">
+    
+        <TABLE align="center" class="shareOptions">
+          <TR>
+            <TD>
+				<script src="https://apis.google.com/js/platform.js" async defer></script>
+                <g:sharetoclassroom url="https://www.flippity.net/rnp.asp?k=1M4gp3M1WVBruO5-WIJzSaATzFwY9lp09PPW9afbDmUs" size="20"></g:sharetoclassroom>
+            </TD>
+            <TD>
+	            <SCRIPT type="text/javascript">document.write("<a href='mailto:?subject=" + docTitle + "&body=Check out this " + docTitle + ": https://www.flippity.net/rnp.asp%3Fk%3D1M4gp3M1WVBruO5-WIJzSaATzFwY9lp09PPW9afbDmUs' TARGET='_blank'><img src='images/Icon-Email.png' width='22' height='20' border='0' title='Email'></a>")</SCRIPT>
+            </TD>
+            <TD>
+                <a href="rnp-QR.asp?k=1M4gp3M1WVBruO5-WIJzSaATzFwY9lp09PPW9afbDmUs" target="_blank"><img src="images/Flippity-QR-Code.gif" width="20" height="20" border="0" align="absmiddle" title="Get QR Code"></a>
+            </TD>
+            <TD>
+                <A href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</A><SCRIPT type="text/javascript" src="https://platform.twitter.com/widgets.js"></SCRIPT>
+            </TD>
+            <TD>
+                <DIV id="fb-root"></DIV>
+                <SCRIPT>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</SCRIPT>
+                <DIV class="fb-like" data-href="" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false"></DIV>
+            </TD>
+            <TD>
+				<SCRIPT type="text/javascript" src="https://apis.google.com/js/plusone.js"></SCRIPT>
+                <g:plusone size="medium"></g:plusone>
+            </TD>
+       		<TD>
+                <a href="https://docs.google.com/spreadsheets/d/1M4gp3M1WVBruO5-WIJzSaATzFwY9lp09PPW9afbDmUs" target="_blank"><img src="images/Google-Sheets-Icon.gif" width="16" height="20" border="0" title="Original Spreadsheet"></a>
+            </TD>
+          </TR>
+        </TABLE>
+      </DIV>
+    </TD>
+  </TR>
+  <TR>
+    <TD height="1" align="CENTER" valign="MIDDLE" bgcolor="#eeeeee">
+      <P class="copyright">Copyright&copy; 2013-2017 Flippity.net. All Rights Reserved.</P>
+    </TD>
+  </TR>
+ </TABLE>
+
+    <SCRIPT type="text/javascript">
+		document.getElementById('linkURL').value = window.location.href
+		document.title = docTitle
+		document.getElementById('title').innerHTML = pageTitle
+    </SCRIPT>
+
+ </BODY>
+</HTML>
